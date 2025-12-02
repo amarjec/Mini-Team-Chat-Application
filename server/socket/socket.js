@@ -5,8 +5,14 @@ import Message from "../models/messageModel.js"; // Import Message model to save
 export const initSocket = (server) => {
   const io = new Server(server, {
     cors: {
-      origin: process.env.CLIENT_URL || "http://localhost:5173",
+      // 1. Add your Netlify URL here (NO trailing slash)
+      origin: [
+        "http://localhost:5173",
+        "https://mini-team-chat-app.netlify.app", 
+        process.env.CLIENT_URL // Good practice to keep this too
+      ],
       methods: ["GET", "POST"],
+      credentials: true, // Must be true for cookies/headers
     },
   });
 
