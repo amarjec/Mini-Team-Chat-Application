@@ -21,7 +21,7 @@ const app = express();
 app.set("trust proxy", 1);
 const server = http.createServer(app);
 
-const allowedOrigin = ["http://localhost:5173", "https://mini-team-chat-app.onrender.com"];
+const allowedOrigin = ["http://localhost:5173", "https://mini-team-chat-app.onrender.com", "https://mini-team-chat-app.netlify.app"];
 
 // Middleware
 app.use(express.json());
