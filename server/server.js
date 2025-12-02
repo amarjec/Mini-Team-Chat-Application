@@ -26,7 +26,11 @@ const allowedOrigin = ['http://localhost:5173', 'https://mini-team-chat-app.onre
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser());
-app.use(cors({origin: allowedOrigin, credentials: true}));
+app.use(cors({
+  origin: allowedOrigin, 
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"]
+}));
 
 // Initialize Socket.io
 const io = initSocket(server); 

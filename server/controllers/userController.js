@@ -5,10 +5,10 @@ import jwt from "jsonwebtoken";
 // Helper to set cookie
 const setTokenCookie = (res, token) => {
   res.cookie("jwt", token, {
-    httpOnly: true,     // Prevents client-side JS from reading the cookie (Security)
-    secure: process.env.NODE_ENV !== "development", // Use secure cookies in production
-    sameSite: "strict", // CSRF protection
-    maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
+    httpOnly: true,
+    secure: process.env.NODE_ENV === "production", // True in production, False locally
+    sameSite: process.env.NODE_ENV === "production" ? "none" : "lax", // None in prod, Lax locally
+    maxAge: 30 * 24 * 60 * 60 * 1000,
   });
 };
 
