@@ -18,9 +18,10 @@ const PORT = process.env.PORT || 8000;
 connectDB();
 
 const app = express();
+app.set("trust proxy", 1);
 const server = http.createServer(app);
 
-const allowedOrigin = ['http://localhost:5173', 'https://mini-team-chat-app.onrender.com'];
+const allowedOrigin = ["http://localhost:5173", "https://mini-team-chat-app.onrender.com"];
 
 // Middleware
 app.use(express.json());
