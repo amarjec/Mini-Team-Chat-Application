@@ -20,7 +20,7 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 
-const allowedOrigin = ['http://localhost:5173', 'http://mtca.netlify.app'];
+const allowedOrigin = ['http://localhost:5173', 'https://mini-team-chat-app.onrender.com'];
 
 // Middleware
 app.use(express.json());
