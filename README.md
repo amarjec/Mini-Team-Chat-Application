@@ -61,7 +61,7 @@ A full-stack, real-time collaboration tool allowing users to communicate via pub
 ### 2. Frontend Setup
 1.  Open a new terminal and navigate to the frontend folder:
     ```bash
-    cd frontend
+    cd client
     ```
 2.  Install dependencies:
     ```bash
